@@ -1,0 +1,20 @@
+a:link{
+	color: orchid;
+	font-weight: bold;
+	text-decoration: none;
+}
+a: visited{
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover{
+	color: pink;
+}
+body{
+	max-width: 1000px;
+	font-size: 1.5em;
+}
+.cactus{
+	color: green;
+	padding-left: 1em;
+}

@@ -1,0 +1,19 @@
+img{display:none;!important}
+a{display:none;!important}
+hr{display:none;!important}
+font{display:none;!important}
+html{font-family:monospace;!important
+}
+body{
+	color: white!important;
+	background-color: black!important;
+	text-align: center;
+}
+p{
+	max-width: 500px;
+	display: inline-block;
+	text-align: left;
+}
+h{
+
+}
