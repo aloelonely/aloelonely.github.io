@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <meta charset="UTF-8">
+  <title>tarot</title>
+  <script src="bundle.js"></script>
+  <script src="alts.js"></script>
+  <style type="text/css">
+    body{
+      background: black;
+      text-align: center;
+      font-family: monospace;
+      color: white;
+    }
+    a{
+      text-decoration: none;
+      color: white; 
+    }
+a:visited{color:white;}
+    img{
+      width: 20%;
+    }
+    @media screen and (min-width: 700px) {
+        #container{
+        width: 70%; 
+        max-width: 1000px;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5px;
+      }
+      #topper{
+        width: 70%; 
+        max-width: 1000px;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5px;
+      }
+    }
+    @media screen and (max-width: 700px) {
+    img {
+      width: 100%;
+    }
+    #container{
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0, 0);
+    }
+        #topper{
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0, 0);
+    }
+}
+  </style>
+  </head>
+   <body>
+    <div id="topper">
+    </div>
+    <div id="container">
+    </div>
+    <script type="text/javascript">
+      function pad(num, size) {
+        var s = "0" + num;
+        return s.substr(s.length-size);
+      }
+      for (i=0; i<78; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<br/><br/>*****<br/><br/>"+
+          "<a target='blank' href=big/"+padded+".png>"+alts(0,padded)+"</a>"+
+          " * <a target='blank' href=./cards/descs/"+padded+".html>info</a>";
+      }
+    </script>
+  </body>
+</html>

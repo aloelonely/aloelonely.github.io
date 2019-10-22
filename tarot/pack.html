@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -17,10 +18,17 @@
     }
 a:visited{color:white;}
     img{
-      width: 33%;
+      width: 20%;
     }
     @media screen and (min-width: 700px) {
         #container{
+        width: 70%; 
+        max-width: 1000px;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5px;
+      }
+      #topper{
         width: 70%; 
         max-width: 1000px;
         padding-left: 15%;
@@ -41,10 +49,21 @@ a:visited{color:white;}
       left: 0%;
       transform: translate(0, 0);
     }
+        #topper{
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0, 0);
+    }
 }
   </style>
   </head>
    <body>
+    <div id="topper">
+    </div>
     <div id="container">
     </div>
     <script type="text/javascript">
@@ -52,14 +71,76 @@ a:visited{color:white;}
         var s = "0" + num;
         return s.substr(s.length-size);
       }
-      for (i=0; i<78; i++) {
+      var pd=pad(0,2);
+       document.getElementById("topper").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+pd+".html>"+
+          "<img src='big/"+pd+".png' alt='"+alts(0,pd)+"'title='"+alts(0,pd)+"'/>"+"</a>";
+        document.getElementById("topper").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+21+".html>"+
+          "<img src='big/"+21+".png' alt='"+alts(0,21)+"'title='"+alts(0,21)+"'/>"+"</a>";   
+      for (i=1; i<21; i++) {
         var padded=pad(i,2);
         document.getElementById("container").innerHTML+=
-          "<a target='blank' href=./cards/descs/"+i+".html>"+
-          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+
-          "<h2 style='text-align: right; padding-top: 10px;'><a href='index.html'>back</a></h2>"
-        ;
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
       }
+      for (i=22; i<32; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=32; i<36; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=36; i<46; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=46; i<50; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=50; i<60; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=60; i<64; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=64; i<74; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=74; i<78; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+
     </script>
   </body>
 </html>
