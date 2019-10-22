@@ -74,10 +74,11 @@ a:visited{color:white;}
       for (i=0; i<78; i++) {
         var padded=pad(i,2);
         document.getElementById("container").innerHTML+=
-          "<br/><br/>*****<br/><br/>"+
           "<a target='blank' href=big/"+padded+".png>"+alts(0,padded)+"</a>"+
-          " * <a target='blank' href=./cards/descs/"+padded+".html>info</a>";
+          " * <a target='blank' href=./cards/descs/"+padded+".html>info</a>"+
+          "<br/><br/>*****<br/><br/>";
       }
+      document.getElementById("container").innerHTML+="<a href='pack.html'><b>view as images</b></a> * <a href='index.html'><b>go back</b></a>";         
     </script>
   </body>
 </html>
