@@ -52,13 +52,14 @@ a:visited{color:white;}
         var s = "0" + num;
         return s.substr(s.length-size);
       }
-      for(i=0,i<78,i++)    
+      for(i=0,i<78,i++)    {
         var padded=pad(i,2);
         document.getElementById("container").innerHTML+=
           "<a target='blank' href=./cards/descs/"+i+".html>"+
           "<img src='big/"+past+".png' alt='"+alts(0,past)+"'title='"+alts(0,i)+"'/>"+
           "<h2 style='text-align: right; padding-top: 10px;'><a href='index.html'>back</a></h2>"
         ;
+      }
     </script>
   </body>
 </html>
