@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <meta charset="UTF-8">
+  <title>tarot</title>
+  <script src="bundle.js"></script>
+  <script src="alts.js"></script>
+  <style type="text/css">
+    body{
+      background: black;
+      text-align: center;
+      font-family: monospace;
+    }
+    a{
+      text-decoration: none;
+      color: white; 
+    }
+a:visited{color:white;}
+    img{
+      width: 20%;
+    }
+    @media screen and (min-width: 7000000px) {
+        #container{
+        width: 70%; 
+        max-width: 1000px;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5px;
+      }
+      #topper{
+        width: 70%; 
+        max-width: 1000px;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5px;
+      }
+    }
+    @media screen and (max-width: 7000000px) {
+    img {
+      width: 100%;
+    }
+    #container{
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0, 0);
+    }
+        #topper{
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0, 0);
+    }
+}
+  </style>
+  </head>
+   <body>
+    <div id="topper">
+    </div>
+    <div id="container">
+    </div>
+    <script type="text/javascript">
+      function pad(num, size) {
+        var s = "0" + num;
+        return s.substr(s.length-size);
+      }
+      var pd=pad(0,2);
+       document.getElementById("topper").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+pd+".html>"+
+          "<img src='big/"+pd+".png' alt='"+alts(0,pd)+"'title='"+alts(0,pd)+"'/>"+"</a>";
+        document.getElementById("topper").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+21+".html>"+
+          "<img src='big/"+21+".png' alt='"+alts(0,21)+"'title='"+alts(0,21)+"'/>"+"</a>";   
+      for (i=1; i<21; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      for (i=22; i<32; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=32; i<36; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=36; i<46; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=46; i<50; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=50; i<60; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=60; i<64; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=64; i<74; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/>";
+      for (i=74; i<78; i++) {
+        var padded=pad(i,2);
+        document.getElementById("container").innerHTML+=
+          "<a target='blank' href=./cards/descs/"+padded+".html>"+
+          "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
+      }
+      document.getElementById("container").innerHTML+="<br/><br/><a href='list.html'><b>view as a list</b></a> or <a href='index.html'><b>go back</b></a>";
+    </script>
+  </body>
+</html>
