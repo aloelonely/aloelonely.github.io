@@ -13,13 +13,9 @@ a:hover{
 body{
 	max-width: 1000px;
 	font-size: 1.5em;
-	text-align: left; 
-	display: inline-block;
 }
 .cactus{
 	color: green;
 	padding-left: 1em;
 }
-html{
-	text-align: center;	
-}
+
