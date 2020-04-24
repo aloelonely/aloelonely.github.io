@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <meta charset="UTF-8">
+  <title>tarot</title>
+  <script src="bundle.js"></script>
+  <script src="alts.js"></script>
+  <style type="text/css">
+    body{
+      background: black;
+      text-align: center;
+      font-family: monospace;
+    }
+    a{
+      text-decoration: none;
+      color: white; 
+    }
+a:visited{color:white;}
+    img{
+      width: 33%;
+    }
+    @media screen and (min-width: 700px) {
+        #container{
+        width: 70%; 
+        max-width: 1000px;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5px;
+      }
+    }
+    @media screen and (max-width: 700px) {
+    img {
+      width: 100%;
+    }
+    #container{
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0, 0);
+    }
+}
+  </style>
+  </head>
+   <body>
+    <div id="container">
+    </div>
+    <script type="text/javascript">
+      function pad(num, size) {
+        var s = "0" + num;
+        return s.substr(s.length-size);
+      }
+      var RandomOrg = require('random-org');
+      var random = new RandomOrg({ apiKey: '24cae906-37d2-486b-9cbb-2eeb5a06e1e2',  endpoint: 'https://api.random.org/json-rpc/2/invoke'});
+      random.generateIntegers({ min: 0, max: 77, n: 3, replacement: false })
+      .then(function(result) {
+        if (result.random.data[0]!==result.random.data[1] && result.random.data[0]!==result.random.data[2] && result.random.data[1]!==result.random.data[2]){
+        var past=pad(result.random.data[0],2);
+        var present=pad(result.random.data[1],2);
+        var future=pad(result.random.data[2],2);
+        document.getElementById("container").innerHTML=
+          "<a target='blank' href=./cards/descs/"+past+".html>"+
+          "<img src='big/"+past+".png' alt='"+alts(0,past)+"'title='"+alts(0,past)+"'/>"+
+          "</a>"+"<a target='blank' href=./cards/descs/"+present+".html>"+
+          "<img src='big/"+present+".png' alt='"+alts(1,present)+"'title='"+alts(0,present)+"'/>"+
+          "</a>"+"<a target='blank' href=./cards/descs/"+future+".html>"+
+          "<img src='big/"+future+".png' alt='"+alts(2,)+"'title='"+alts(0,future)+"'/>"+"</a>"+
+          "<h2 style='text-align: right; padding-top: 10px;'><a href='index.html'>back</a></h2>"
+        ;
+      }
+      else{
+        document.write("doubles!");
+      };
+      });
+    </script>
+  </body>
+</html>

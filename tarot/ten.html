@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <meta charset="UTF-8">
+  <title>tarot</title>
+  <script src="bundle.js"></script>
+  <script src="alts.js"></script>
+  <style type="text/css">
+    body{
+      background: black;
+      text-align: center;
+      font-family: monospace;
+    }
+    a{
+      text-decoration: none;
+      color: white; 
+    }
+a:visited{color:white;}
+    img{
+      width: 20%;
+    }
+        #container{
+        padding-left: 5%;
+        padding-top: 2%;
+        padding-right: 5%;
+      }
+.thirdblank{
+  width: 6.6%;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+  </style>
+  </head>
+   <body>
+    <div id="container">
+    </div>
+    <script type="text/javascript">
+      function pad(num, size) {
+        var s = "0" + num;
+        return s.substr(s.length-size);
+      }
+      var RandomOrg = require('random-org');
+      var random = new RandomOrg({ apiKey: '24cae906-37d2-486b-9cbb-2eeb5a06e1e2',  endpoint: 'https://api.random.org/json-rpc/2/invoke'});
+      random.generateIntegers({ min: 0, max: 77, n: 10, replacement: false })
+      .then(function(result) {
+        var significator=pad(result.random.data[0],2);
+        var crosses=pad(result.random.data[1],2);
+        var crowns=pad(result.random.data[2],2);
+        var beneath=pad(result.random.data[3],2);
+        var behind=pad(result.random.data[4],2);
+        var before=pad(result.random.data[5],2);
+        var self=pad(result.random.data[6],2);
+        var house=pad(result.random.data[7],2);
+        var hopesorfears=pad(result.random.data[8],2);
+        var whatwillcome=pad(result.random.data[9],2);        
+        document.getElementById("container").innerHTML=   
+                  "<p style='text-align:left; color:white;'>significator:</p>"+              
+          "<a target='blank' href=./cards/descs/"+significator+".html>"+
+          "<img src='big/"+significator+".png' alt='"+alts(0,significator)+"'title='"+alts(0,significator)+"'/>"+
+          "<img src='big/blank.png'/>"+                    
+          "<img src='big/blank.png'/>"+ 
+          "<img src='big/blank.png'/>"+    
+          "<a target='blank' href=./cards/descs/"+whatwillcome+".html>"+
+          "<img src='big/"+whatwillcome+".png' alt='"+alts(2,)+"'title='"+alts(0,whatwillcome)+"'/>"+"</a>"+
+
+          
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "<img src='big/blank.png'/>"+
+          "<a target='blank' href=./cards/descs/"+crowns+".html>"+
+          "<img src='big/"+crowns+".png' alt='"+alts(2,)+"'title='"+alts(0,crowns)+"'/>"+"</a>"+
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "<img src='big/blank.png'/>"+ 
+          "</a>"+"<a target='blank' href=./cards/descs/"+hopesorfears+".html>"+
+          "<img src='big/"+hopesorfears+".png' alt='"+alts(2,)+"'title='"+alts(0,hopesorfears)+"'/>"+"</a>"+
+
+          "</a>"+"<a target='blank' href=./cards/descs/"+before+".html>"+
+          "<img src='big/"+before+".png' alt='"+alts(2,)+"'title='"+alts(0,before)+"'/>"+"</a>"+
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "</a>"+"<a target='blank' href=./cards/descs/"+crosses+".html>"+
+          "<img src='big/"+crosses+".png' class='rotate90' alt='"+alts(1,crosses)+"'title='"+alts(0,crosses)+"'/>"+
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "</a>"+"<a target='blank' href=./cards/descs/"+behind+".html>"+
+          "<img src='big/"+behind+".png' alt='"+alts(2,)+"'title='"+alts(0,behind)+"'/>"+"</a>"+
+          "<img src='big/blank.png'class='thirdblank'/>"+
+          "</a>"+"<a target='blank' href=./cards/descs/"+house+".html>"+
+          "<img src='big/"+house+".png' alt='"+alts(2,)+"'title='"+alts(0,house)+"'/>"+"</a>"+
+          
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "<img src='big/blank.png'/>"+          
+          "</a>"+"<a target='blank' href=./cards/descs/"+beneath+".html>"+
+          "<img src='big/"+beneath+".png' alt='"+alts(2,)+"'title='"+alts(0,beneath)+"'/>"+"</a>"+
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "<img src='big/blank.png' class='thirdblank'/>"+
+          "<img src='big/blank.png'/>"+                 
+          "</a>"+"<a target='blank' href=./cards/descs/"+self+".html>"+
+          "<img src='big/"+self+".png' alt='"+alts(2,)+"'title='"+alts(0,self)+"'/>"+"</a>"+
+
+          "<h2 style='text-align: right; padding-top: 10px;'><a href='index.html'>back</a></h2>"
+        ;
+      });
+    </script>
+  </body>
+</html>
