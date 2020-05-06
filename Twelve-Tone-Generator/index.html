@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Twelve Tone Generator by Manuel Vargas</title>
+		<meta name="author" content="Manuel Vargas">
+		<meta name="description" content="Creates tone row, tone matrix and notation on staff">
+		<meta name="keywords" content="twelve, tone, music, theory, row, matrix">
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- my styles -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/media.css">
+		<link rel="stylesheet" href="css/keyboard.css">
+
+		<!-- external css libraries -->
+		<link rel="stylesheet" href="css/external/animate.css">
+		<link rel="stylesheet" href="css/external/hover-min.css" media="all">
+		<link rel="stylesheet" href="css/external/font-awesome-4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--
+body is made of three sections:
+- left panel = settings
+- main panel = tone row and matric display
+- white panel = sheet music notation display
+-->
+
+
+		<div id="left-panel">
+
+			<!-- mobile menu button -->
+			<div id="left-panel-btn">
+				<i class="fa fa-bars" aria-hidden="true"></i>
+			</div>
+
+			<!-- title -->
+			<h1 id="title" class="left-panel-title animated bounceInLeft">
+				<a href="https://github.com/ManuelVargas1251/Twelve-Tone-Generator" target="_blank">Twelve Tone <br>Generator</a><sm>  1.6.4<br>
+				by <a href="https://github.com/ManuelVargas1251" target="_blank">Manuel Vargas</a></sm><br><br>
+			</h1>
+
+
+			<!-- settings -->
+			<h2>Settings</h2>
+
+			<!-- accidental toggle -->
+			<div id="settings-option">
+				<!--toggle name-->
+				<h3 style="display: inline;">Flats</h3>
+				<!-- switch-->
+				<label class="switch">
+					<input type="checkbox" onclick='toggle_accidental(this)'>
+					<div class="slider round"></div>
+				</label><br>
+			</div>
+
+			<!-- clef toggle -->
+			<div id="settings-option">
+				<!--toggle name-->
+				<h3 style="display: inline;">Bass</h3>
+				<!-- switch-->
+				<label class="switch">
+					<input type="checkbox" onclick='toggle_clef(this)'>
+					<div class="slider round"></div>
+				</label><br>
+			</div>
+
+			<!-- custom row -->
+			<div id="settings-option">
+				<!--toggle name-->
+				<h3 style="display: inline;">Custom</h3>
+				<!-- switch-->
+				<label class="switch">
+					<input type="checkbox" onclick='show_keyboard(this)'>
+					<div class="slider round" style="opacity:.5;"></div>
+				</label>
+			</div>
+
+			<div id="keyboard" class="keyboard" >
+				<div class="key"></div>				<!-- C	-->
+				<div class="key-black"></div>		<!-- C# -->
+				<div class="key"></div>				<!-- D 	-->
+				<div class="key-black"></div>		<!-- D# -->
+				<div class="key"></div>				<!-- E	-->
+				<div class="key"></div>			<!-- F 	-->
+				<div class="key-black"></div>		<!-- F# -->
+				<div class="key"></div>			<!-- G 	-->
+				<div class="key-black"></div>		<!-- G# -->
+				<div class="key"></div>			<!-- A 	-->
+				<div class="key-black"></div>		<!-- A# -->
+				<div class="key"></div>				<!-- B 	-->
+			</div>
+
+			<br><br>
+
+			<!-- buttons -->
+
+			<button id="create" type="button">Create</button>
+
+			<button>
+				<a href="https://github.com/ManuelVargas1251/Twelve-Tone-Generator" target="_blank">About</a></button>
+
+			<br><br>
+
+			<ul id="color-switcher">
+				<li id="wave"></li>
+				<li id="poupon"></li>
+				<li id="pistacio"></li>
+				<li id="autumn"></li>
+			</ul>
+
+
+		</div>
+
+		<div id="main-panel">
+
+			<!-- display notes-->
+			<div id="mobile-header">
+				<br><br>
+				<h1 class="animated bounceInLeft">
+					<a href="https://github.com/ManuelVargas1251/Twelve-Tone-Generator" target="_blank">Twelve Tone <br>Generator</a><sm>  1.6.4<br>
+					by <a href="https://github.com/ManuelVargas1251" target="_blank">Manuel Vargas</a></sm>
+				</h1>
+				<br>
+			</div>
+
+			<button
+					id="mobile-button"
+					class="hvr-buzz-out"
+					type="button" onclick="create()">Create</button><p><br>
+			<!-- End of Mobile Create Button -->
+
+
+			<strong id="hide-1" style="font-size: 30px; display: none;">Tone Row<br></strong>
+			<row id="note_0"> </row> <row id="note_1"> </row> <row id="note_2"> </row>
+			<row id="note_3"> </row> <row id="note_4"> </row> <row id="note_5"> </row>
+			<row id="note_6"> </row> <row id="note_7"> </row> <row id="note_8"> </row>
+			<row id="note_9"> </row> <row id="note_10"> </row> <row id="note_11"> </row>
+			<br>
+
+
+			<!-- display matrix	-->
+			<strong id="hide-2" style="font-size: 30px; display: none;">Tone Matrix<br></strong><br>
+			<table class="hoverTable" id="matrix">
+				<!--			#1-->
+				<tr>
+					<th><k id="1-1"></k></th>
+					<th><k id="2-1"></k></th>
+					<th><k id="3-1"></k></th>
+					<th><k id="4-1"></k></th>
+					<th><k id="5-1"></k></th>
+					<th><k id="6-1"></k></th>
+					<th><k id="7-1"></k></th>
+					<th><k id="8-1"></k></th>
+					<th><k id="9-1"></k></th>
+					<th><k id="10-1"></k></th>
+					<th><k id="11-1"></k></th>
+					<th><k id="12-1"></k></th>
+				</tr>
+
+				<!--			#2-->
+				<tr>
+					<th><k id="1-2"></k></th>
+					<th><k id="2-2"></k></th>
+					<th><k id="3-2"></k></th>
+					<th><k id="4-2"></k></th>
+					<th><k id="5-2"></k></th>
+					<th><k id="6-2"></k></th>
+					<th><k id="7-2"></k></th>
+					<th><k id="8-2"></k></th>
+					<th><k id="9-2"></k></th>
+					<th><k id="10-2"></k></th>
+					<th><k id="11-2"></k></th>
+					<th><k id="12-2"></k></th>
+				</tr>
+
+				<!--			#3-->
+				<tr>
+					<th><k id="1-3"></k></th>
+					<th><k id="2-3"></k></th>
+					<th><k id="3-3"></k></th>
+					<th><k id="4-3"></k></th>
+					<th><k id="5-3"></k></th>
+					<th><k id="6-3"></k></th>
+					<th><k id="7-3"></k></th>
+					<th><k id="8-3"></k></th>
+					<th><k id="9-3"></k></th>
+					<th><k id="10-3"></k></th>
+					<th><k id="11-3"></k></th>
+					<th><k id="12-3"></k></th>
+				</tr>
+
+				<!--			#4-->
+				<tr>
+					<th><k id="1-4"></k></th>
+					<th><k id="2-4"></k></th>
+					<th><k id="3-4"></k></th>
+					<th><k id="4-4"></k></th>
+					<th><k id="5-4"></k></th>
+					<th><k id="6-4"></k></th>
+					<th><k id="7-4"></k></th>
+					<th><k id="8-4"></k></th>
+					<th><k id="9-4"></k></th>
+					<th><k id="10-4"></k></th>
+					<th><k id="11-4"></k></th>
+					<th><k id="12-4"></k></th>
+				</tr>
+
+				<!--			#5-->
+				<tr>
+					<th><k id="1-5"></k></th>
+					<th><k id="2-5"></k></th>
+					<th><k id="3-5"></k></th>
+					<th><k id="4-5"></k></th>
+					<th><k id="5-5"></k></th>
+					<th><k id="6-5"></k></th>
+					<th><k id="7-5"></k></th>
+					<th><k id="8-5"></k></th>
+					<th><k id="9-5"></k></th>
+					<th><k id="10-5"></k></th>
+					<th><k id="11-5"></k></th>
+					<th><k id="12-5"></k></th>
+				</tr>
+
+				<!--			#6-->
+				<tr>
+					<th><k id="1-6"></k></th>
+					<th><k id="2-6"></k></th>
+					<th><k id="3-6"></k></th>
+					<th><k id="4-6"></k></th>
+					<th><k id="5-6"></k></th>
+					<th><k id="6-6"></k></th>
+					<th><k id="7-6"></k></th>
+					<th><k id="8-6"></k></th>
+					<th><k id="9-6"></k></th>
+					<th><k id="10-6"></k></th>
+					<th><k id="11-6"></k></th>
+					<th><k id="12-6"></k></th>
+				</tr>
+
+				<!--			#7-->
+				<tr>
+					<th><k id="1-7"></k></th>
+					<th><k id="2-7"></k></th>
+					<th><k id="3-7"></k></th>
+					<th><k id="4-7"></k></th>
+					<th><k id="5-7"></k></th>
+					<th><k id="6-7"></k></th>
+					<th><k id="7-7"></k></th>
+					<th><k id="8-7"></k></th>
+					<th><k id="9-7"></k></th>
+					<th><k id="10-7"></k></th>
+					<th><k id="11-7"></k></th>
+					<th><k id="12-7"></k></th>
+				</tr>
+
+				<!--			#8-->
+				<tr>
+					<th><k id="1-8"></k></th>
+					<th><k id="2-8"></k></th>
+					<th><k id="3-8"></k></th>
+					<th><k id="4-8"></k></th>
+					<th><k id="5-8"></k></th>
+					<th><k id="6-8"></k></th>
+					<th><k id="7-8"></k></th>
+					<th><k id="8-8"></k></th>
+					<th><k id="9-8"></k></th>
+					<th><k id="10-8"></k></th>
+					<th><k id="11-8"></k></th>
+					<th><k id="12-8"></k></th>
+				</tr>
+
+				<!--			#9-->
+				<tr>
+					<th><k id="1-9"></k></th>
+					<th><k id="2-9"></k></th>
+					<th><k id="3-9"></k></th>
+					<th><k id="4-9"></k></th>
+					<th><k id="5-9"></k></th>
+					<th><k id="6-9"></k></th>
+					<th><k id="7-9"></k></th>
+					<th><k id="8-9"></k></th>
+					<th><k id="9-9"></k></th>
+					<th><k id="10-9"></k></th>
+					<th><k id="11-9"></k></th>
+					<th><k id="12-9"></k></th>
+				</tr>
+
+				<!--			#10-->
+				<tr>
+					<th><k id="1-10"></k></th>
+					<th><k id="2-10"></k></th>
+					<th><k id="3-10"></k></th>
+					<th><k id="4-10"></k></th>
+					<th><k id="5-10"></k></th>
+					<th><k id="6-10"></k></th>
+					<th><k id="7-10"></k></th>
+					<th><k id="8-10"></k></th>
+					<th><k id="9-10"></k></th>
+					<th><k id="10-10"></k></th>
+					<th><k id="11-10"></k></th>
+					<th><k id="12-10"></k></th>
+				</tr>
+
+				<!--			#11-->
+				<tr>
+					<th><k id="1-11"></k></th>
+					<th><k id="2-11"></k></th>
+					<th><k id="3-11"></k></th>
+					<th><k id="4-11"></k></th>
+					<th><k id="5-11"></k></th>
+					<th><k id="6-11"></k></th>
+					<th><k id="7-11"></k></th>
+					<th><k id="8-11"></k></th>
+					<th><k id="9-11"></k></th>
+					<th><k id="10-11"></k></th>
+					<th><k id="11-11"></k></th>
+					<th><k id="12-11"></k></th>
+				</tr>
+
+				<!--			#12-->
+				<tr>
+					<th><k id="1-12"></k></th>
+					<th><k id="2-12"></k></th>
+					<th><k id="3-12"></k></th>
+					<th><k id="4-12"></k></th>
+					<th><k id="5-12"></k></th>
+					<th><k id="6-12"></k></th>
+					<th><k id="7-12"></k></th>
+					<th><k id="8-12"></k></th>
+					<th><k id="9-12"></k></th>
+					<th><k id="10-12"></k></th>
+					<th><k id="11-12"></k></th>
+					<th><k id="12-12"></k></th>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<div id="white-panel">
+			<!-- display musical staves -->
+			<div id="staff_one" style="display: block;"></div>
+			<div id="staff_two" style="display: block;"></div>
+			<div id="staff_three" style="display: block;"></div>
+			<div id="staff_four" style="display: block;"></div>
+		</div>
+
+		<!-- external libraries -->
+		<script src="js/external/jquery-3.2.1.min.js"></script>
+		<script src="js/external/vexflow-1.2.83/releases/vexflow-min.js"></script>
+
+
+		<!-- local libraries -->
+		<script src="js/main.js"></script>
+		<script src="js/generator/sound.js"></script>
+		<script src="js/generator/theme.js"></script>
+		<script src="js/generator/keyboard.js"></script>
+		<script src="js/generator/tone_row.js"></script>
+		<script src="js/generator/notation.js"></script>
+		<script src="js/generator/matrix.js"></script>
+		<script src="js/generator/sound.js"></script>	
+
+		<!-- mobile menu-->
+		<script>
+			$(document).ready(function(){
+				$('#left-panel-btn').click(function(){
+					$('#left-panel').toggleClass('visible');
+					$('#mobile-button').toggleClass('visible');
+				});
+			});
+		</script>
+
+		<!-- google analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+									})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-77813077-2', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+
+	</body>
+</html>

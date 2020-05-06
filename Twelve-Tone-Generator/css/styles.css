@@ -1,0 +1,280 @@
+/*
+*** styles.css
+
+
+*/
+
+/* google fonts */
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text);
+
+/* foundations */
+html{
+	--padding-top: 10px;		/* global top padding */
+	color: var(--white-accent);
+	background: var(--black-accent);
+
+	overflow: hidden;
+	font-family: Raleway, sans-serif;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* page panels */
+#left-panel {
+	padding-top: var(--padding-top);
+	background-color: var(--theme-color);
+
+	width: 200px;
+	height: 100%;
+	display: block;
+	position: absolute;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#main-panel {
+	padding-top: var(--padding-top);
+
+	position: absolute;
+	display: inline-block;
+	left:	255px;
+	padding-left: 20px;
+}
+
+#white-panel {
+	padding-top: var(--padding-top);
+	background-color: var(--white-accent);
+
+
+	top: 0px;
+	width: 100%;
+	left: 850px;
+	height: 100%;
+	display: block;
+	position: absolute;
+	padding-left: 20px;
+}
+
+#settings-option {
+	padding: 8px 0px;
+}
+
+#mobile-button{
+	background-color: #cd552c;
+	display: none;
+}
+
+#mobile-header, #left-panel-btn{
+	display: none;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: color: var(--white-accent);
+}
+
+/*smaller header 1 text*/
+sm {
+	font-weight: normal;
+	font-size: 50%;
+}
+
+/* tone row */
+row{
+	display: inline-block;
+	font-size: 30px;
+}
+/* matrix output*/
+k {
+	font-weight: normal; /* they weren't normal by default? */
+}
+
+/**********/
+/* button */
+/**********/
+
+button {
+
+	/* text */
+	font-size: 1em;	
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--white-accent);
+	font-family: Raleway, sans-serif;
+
+	/* button */
+	border: none;
+	outline: none;
+	background: var(--white-accent);
+	background-color: var(--black-accent);
+
+	/* config */
+	z-index: 3;
+	display:block;
+	display: inline;
+	padding: 7px 22px;
+	border-radius: 20px;
+}
+
+/*********/
+/* Table */
+/*********/
+table {
+	border-collapse: collapse;
+	font-size: 30px;
+
+}
+
+th, td {
+	border: 1px solid var(--white-accent); 
+}
+
+tr:nth-child(even) {
+	background-color: #3b3c3d;
+}
+
+.hoverTable{
+	width:100%; 
+	border-collapse:collapse; 
+}
+
+/* Define the hover highlight color for the table row */
+.hoverTable tr:hover {
+	background-color: var(--theme-color);
+}
+
+#matrix {
+	display: none;
+}
+
+i {
+	margin:10px;
+}
+
+/**************************************************/
+/*toggle box*/
+/* The switch - the box around the slider */
+.switch {
+
+	width: 54px;
+	height: 25px;
+	float: right;
+	position: relative;
+	margin-right: 10px;
+	border-radius: 50px;
+	display: inline-block;
+	/*	border: 2px solid var(--theme-dark);	--circle border	*/
+}
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--black-accent);
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 4px;
+	bottom: 4px;
+	background-color: var(--white-accent);
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+input:checked + .slider {
+	background-color: var(--theme-dark);
+}
+input:focus + .slider {
+	box-shadow: 0 0 1px #ff0000;
+}
+input:checked + .slider:before {
+	-webkit-transform: translateX(70px);
+	-ms-transform: translateX(70px);
+	transform: translateX(28px);
+}
+/* Rounded sliders */
+.slider.round {
+	border-radius: 30px;
+}
+.slider.round:before {
+	border-radius: 50%;
+}
+
+#color-switcher {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5px;
+	overflow: hidden;
+
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1.2rem;
+	padding-bottom: 2rem;
+	position: absolute;
+	z-index: 0;
+	background-color: var(--theme-color);
+}
+
+#color-switcher li {
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	margin: 0 12px 0px 0;
+
+}
+
+#wave {
+	background: #55aad1;
+	border: 4px solid #3f789e;
+}
+#poupon {
+	background: #beb048;
+	border: 4px solid #80792f;
+}
+#pistacio {
+	background: #55b483;
+	border: 4px solid #397a5e;
+}
+#autumn {
+	background: #cd552c;
+	border: 4px solid #8a3d1e;
+}
+
+.custom input[type="text"] {
+	border: none;
+	padding: 10px;
+	transition: border 0.3s;
+	background: --white-accent;
+	border-bottom: solid 2px #c9c9c9;
+
+	margin: 1px;
+	resize: none;
+	padding: 12px 20px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+
+	background-color: #f8f8f8;
+}
