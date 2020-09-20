@@ -21,3 +21,8 @@ body{
 @media screen and (max-width: 1000px) {
 	body{font-size: 2em;}
 }
+.blog{
+	border:none;
+	width:100%;
+	height:100%;
+}
