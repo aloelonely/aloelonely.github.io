@@ -19,7 +19,7 @@ body{
 	padding-left: 1em;
 }
 @media screen and (max-width: 1000px) {
-	body{font-size: 2em;}
+	body{font-size: 1.5em;}
 }
 .blog{
 	border:none;
