@@ -11,6 +11,9 @@
             color: white;
             font-family: monospace;
         }
+      img{
+        width: 90%;
+        max-width: 400px;}
     a:visited{color:white;}
     </style>
 
@@ -22,7 +25,7 @@
 <h1>aloe lonely tarot blog</h1>
 <div id="blog"></div>
 <script>
-for (i=1; i<4; i++) {
+for (i=2; i>0; i--) {
 document.getElementById("blog").innerHTML+='<import-content path="'+i+'.html" loading="eager"></import-content>'+'<a href="'+i+'.html">permalink</a>'+'<br/><br/>=====<br/>';
 }
 </script>
