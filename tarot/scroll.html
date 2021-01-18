@@ -57,6 +57,7 @@ a:visited{color:white;}
         return s.substr(s.length-size);
       }
       var pd=pad(0,2);
+            document.getElementById("topper").innerHTML+="<h3><a href='list.html'><b>view as a list</b></a> * <a href='pack.html'><b>in rows</b></a> * <a href='index.html'><b>go back</b></a></h3><br/><br/>";
        document.getElementById("topper").innerHTML+=
           "<a target='blank' href=./cards/descs/"+pd+".html>"+
           "<img src='big/"+pd+".png' alt='"+alts(0,pd)+"'title='"+alts(0,pd)+"'/>"+"</a>";
@@ -124,7 +125,7 @@ a:visited{color:white;}
           "<a target='blank' href=./cards/descs/"+padded+".html>"+
           "<img src='big/"+padded+".png' alt='"+alts(0,padded)+"'title='"+alts(0,padded)+"'/>"+"</a>";
       }
-      document.getElementById("container").innerHTML+="<br/><br/><a href='list.html'><b>view as a list</b></a> or <a href='pack.html'><b>in rows</b></a> or <a href='index.html'><b>go back</b></a>";
+
     </script>
   </body>
 </html>

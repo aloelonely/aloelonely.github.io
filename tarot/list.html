@@ -67,6 +67,7 @@ a:visited{color:white;}
     <div id="container">
     </div>
     <script type="text/javascript">
+            document.getElementById("container").innerHTML+="<h3><a href='pack.html'><b>view as images</b></a> * <a href='index.html'><b>go back</b></a></h3><br/><br/>";    
       function pad(num, size) {
         var s = "0" + num;
         return s.substr(s.length-size);
@@ -78,7 +79,7 @@ a:visited{color:white;}
           " * <a target='blank' href=./cards/descs/"+padded+".html>info</a>"+
           "<br/><br/>*****<br/><br/>";
       }
-      document.getElementById("container").innerHTML+="<a href='pack.html'><b>view as images</b></a> * <a href='index.html'><b>go back</b></a>";         
+     
     </script>
   </body>
 </html>
